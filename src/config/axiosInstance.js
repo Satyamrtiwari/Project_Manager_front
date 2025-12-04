@@ -3,9 +3,12 @@ import axios from 'axios';
 // const myBaseUrl = 'http://127.0.0.1:8000/';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+
+// For production, always use the deployed Render backend URL
+// For development, use localhost or env variable
 const myBaseUrl = isDevelopment 
-  ? process.env.REACT_APP_VITE_API_BASE_URL_LOCAL || 'http://localhost:8000'
-  : process.env.REACT_APP_VITE_API_BASE_URL_DEPLOY || 'https://project-manager-4-cycf.onrender.com';
+  ? (process.env.REACT_APP_VITE_API_BASE_URL_LOCAL || 'http://localhost:8000')
+  : 'https://project-manager-4-cycf.onrender.com';
 
 // Log which URL is being used (helpful for debugging)
 console.log(`🌍 Environment: ${isDevelopment ? 'DEVELOPMENT' : 'PRODUCTION'}`);
