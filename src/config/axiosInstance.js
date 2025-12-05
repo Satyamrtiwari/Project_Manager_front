@@ -18,7 +18,7 @@ console.log(`📝 Env Var Check - DEPLOY: ${process.env.REACT_APP_VITE_API_BASE_
 
 const AxiosInstance = axios.create({
   baseURL: myBaseUrl,
-  timeout: 5000,
+  timeout: 30000,
   headers: {
     "Content-Type": "application/json",
     accept: "application/json"
